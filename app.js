@@ -18,7 +18,7 @@ yargs.command({
       demandOption: true,
     },
   },
-  handler: function (argv) {
+  handler(argv) {
     console.log(chalk.green.inverse('Creating a new file called:'), argv.title);
     notes.addNote(argv.title, argv.body);
   },
@@ -35,7 +35,7 @@ yargs.command({
       demandOption: true,
     },
   },
-  handler: function (argv) {
+  handler(argv) {
     console.log(chalk.inverse.red('Removing the note!!'));
     notes.removeNote(argv.title);
   },
@@ -51,18 +51,17 @@ yargs.command({
       demandOption: true,
     },
   },
-  handler: function (argv) {
-    console.log('kalkd');
+  handler(argv) {
+    notes.readNote(argv.title);
   },
 });
 
 yargs.command({
   command: 'list',
   describe: 'To list the notes',
-  handler: function () {
-    console.log(
-      chalk.italic.inverse.blue('Listing all the notes available...'),
-    );
+  handler() {
+    console.log(chalk.blue.inverse('Listing all the notes available...'));
+    notes.list();
   },
 });
 
