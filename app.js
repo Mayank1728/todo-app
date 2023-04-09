@@ -1,9 +1,8 @@
-import validator from 'validator';
-import fs from 'fs';
-import chalk from 'chalk';
-import yargs from 'yargs';
+const chalk = require('chalk');
+const yargs = require('yargs');
+const notes = require('./notes.js');
 
-// the add command needs title and body
+// the add command needs title and body 5:05
 yargs.command({
   command: 'add',
   describe: 'to add new notes',
@@ -21,11 +20,7 @@ yargs.command({
   },
   handler: function (argv) {
     console.log(chalk.green.inverse('Creating a new file called:'), argv.title);
-    const file = {
-      title: argv.title,
-      body: argv.body,
-    };
-    fs.writeFileSync(`${argv.title}.json`, JSON.stringify(file));
+    notes.addNote(argv.title, argv.body);
   },
 });
 
@@ -35,14 +30,14 @@ yargs.command({
   describe: 'removing the note',
   builder: {
     title: {
-      describe: 'Delete file',
+      describe: 'Delete Note',
       type: 'string',
       demandOption: true,
     },
   },
   handler: function (argv) {
     console.log(chalk.inverse.red('Removing the note!!'));
-    console.log(`Name of the file is ${argv.title}`);
+    notes.removeNote(argv.title);
   },
 });
 
@@ -57,11 +52,7 @@ yargs.command({
     },
   },
   handler: function (argv) {
-    let data = fs.readFileSync(`${argv.title}.json`, 'utf-8');
-    data = JSON.parse(data);
-    console.log(chalk.yellowBright.inverse(`${argv.title} contains: `));
-    console.log('task: ', data.title);
-    console.log('notes: ', data.body);
+    console.log('kalkd');
   },
 });
 
