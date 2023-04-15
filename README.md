@@ -24,7 +24,7 @@ However, parsing information from this array can be cumbersome, and we would nee
 
 Therefore, we use Yargs to make parsing information from the command line much easier. With Yargs, we can define the commands and options for our application in a more structured and user-friendly way. 
 
-Alias are defined so instead of typing --title or --body, -t or -b is enough. Lastly didn't discuss about chalk as it was used for aesthetic purposes ONLY.
+Parsing means EXTRACTION or getting information. Alias are defined so instead of typing --title or --body, -t or -b is enough. Lastly didn't discuss about chalk as it was used for aesthetic purposes ONLY.
 
 ### Adding a Note
 
