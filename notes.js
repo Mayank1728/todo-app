@@ -1,8 +1,6 @@
 const fs = require('fs');
 const chalk = require('chalk');
 
-const getNotes = () => 'Here are your notes...';
-
 const saveChanges = (data) =>
   fs.writeFileSync('notes.json', JSON.stringify(data));
 
@@ -73,7 +71,6 @@ const readNote = (title) => {
 // how does chaining works ? left to right or r to l?
 // when you don't have keyvalue pair this means key and value are same
 module.exports = {
-  getNotes,
   addNote,
   removeNote,
   list,

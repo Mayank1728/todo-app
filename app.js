@@ -26,7 +26,7 @@ yargs.command({
 
 // neds title of file to be removed
 yargs.command({
-  command: 'rem',
+  command: 'del',
   describe: 'removing the note',
   builder: {
     title: {
