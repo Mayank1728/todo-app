@@ -28,7 +28,7 @@ Parsing means EXTRACTION or getting information. Alias are defined so instead of
 
 ### Adding a Note
 
-To add a note, we first load the data from the existing JSON file. Then, we check for duplicate titles in the data. If a duplicate exists, an error is thrown. Otherwise, the note is added to the data and the changes are saved to the JSON file by overwriting it with the updated data.
+To add a note, we first load the data from the existing JSON file. If JSON doesn't exists we return [] and append/push data to it and then save changes. Then, we check for duplicate titles in the data. If a duplicate exists, an error is thrown. Otherwise, the note is added to the data and the changes are saved to the JSON file by overwriting it with the updated data.
 
 ### Deleting a Note
 
