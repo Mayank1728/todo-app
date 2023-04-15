@@ -22,8 +22,10 @@ To know what operation the user wants to perform (add, rem, lis, read), we need 
 
 However, parsing information from this array can be cumbersome, and we would need multiple checks to ensure that the user has properly written the command. For example, when adding a note, both the title and body are required; if they are not provided, an error should be thrown.
 
-Therefore, we use Yargs to make parsing information from the command line much easier. With Yargs, we can define the commands and options for our application in a more structured and user-friendly way.
-Defining the Add, Delete, List, and Read Functions
+Therefore, we use Yargs to make parsing information from the command line much easier. With Yargs, we can define the commands and options for our application in a more structured and user-friendly way. 
+
+Alias are defined so instead of typing --title or --body, -t or -b is enough. Lastly didn't discuss about chalk as it was used for aesthetic purposes ONLY.
+
 ### Adding a Note
 
 To add a note, we first load the data from the existing JSON file. Then, we check for duplicate titles in the data. If a duplicate exists, an error is thrown. Otherwise, the note is added to the data and the changes are saved to the JSON file by overwriting it with the updated data.
@@ -39,3 +41,13 @@ To list all the notes, we load the data from the existing JSON file and display 
 ### Reading a Specific Note
 
 To read a specific note, we load the data from the existing JSON file and look for the title in the data. If the title is not found, an error is thrown. Otherwise, the title and its content are displayed.
+
+### Other things I learned
+
+1. Understanding documentation.
+2. Workings of .filter(), .find(), .forEach() methods.
+3. Destructuring objects and exporting & importing functions from a file
+
+## Conclusion
+
+This command line notes app provides a simple and efficient way to manage your notes from the terminal. The use of Node.js and its built-in modules, along with Yargs and Chalk, allows for a streamlined and effective approach to parsing and managing command line arguments.
